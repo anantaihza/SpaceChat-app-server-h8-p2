@@ -1,0 +1,77 @@
+[
+    {
+        "name": "CodeMasters",
+        "description": "A community that encourages members to become coding experts through weekly challenges and mentoring.",
+        "imgGroupUrl": "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "name": "DevNerds",
+        "description": "A gathering place for enthusiastic developers, focusing on in-depth technical discussions and project collaborations.",
+        "imgGroupUrl": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "name": "BugSquashers",
+        "description": "A community focused on debugging and problem-solving, helping members tackle coding issues together.",
+        "imgGroupUrl": "https://images.unsplash.com/photo-1607706189992-eae578626c86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "name": "CodeChamps",
+        "description": "A community that hosts monthly coding competitions with rewards to foster programming skills.",
+        "imgGroupUrl": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "name": "TechTribe",
+        "description": "A community that emphasizes collaborative learning in the latest technologies, from front-end to AI.",
+        "imgGroupUrl": "https://images.unsplash.com/photo-1483817101829-339b08e8d83f?q=80&w=2004&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "name": "SyntaxSavvy",
+        "description": "A community offering training and guidance in writing clean and efficient code.",
+        "imgGroupUrl": "https://images.unsplash.com/photo-1607705703571-c5a8695f18f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "name": "PixelCoders",
+        "description": "A community dedicated to front-end developers, focusing on aesthetic and responsive web design and development.",
+        "imgGroupUrl": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "name": "DevGenesis",
+        "description": "A community for beginners in programming, providing a strong foundation and ongoing guidance.",
+        "imgGroupUrl": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "name": "ScriptShifters",
+        "description": "A community for developers looking to transition to or learn new programming languages through collaborative projects.",
+        "imgGroupUrl": "https://images.unsplash.com/photo-1580894896813-652ff5aa8146?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "name": "AlgoGurus",
+        "description": "A community that challenges members with daily algorithm exercises and discussions on code optimization.",
+        "imgGroupUrl": "https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "name": "FullStackNation",
+        "description": "A community focused on full-stack development, featuring real-world projects and cross-discipline collaboration.",
+        "imgGroupUrl": "https://images.unsplash.com/photo-1511376777868-611b54f68947?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "name": "CodeCurators",
+        "description": "A community curating the best educational programming content, from tutorials to live webinars.",
+        "imgGroupUrl": "https://images.unsplash.com/photo-1518933165971-611dbc9c412d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "name": "DataDruids",
+        "description": "A community for those interested in data science and analytics, with challenging projects.",
+        "imgGroupUrl": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "name": "AppWizards",
+        "description": "A community for mobile app developers, focusing on creating innovative and functional applications.",
+        "imgGroupUrl": "https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+        "name": "CloudChasers",
+        "description": "A community focused on cloud development and management, with deep learning in cloud technologies.",
+        "imgGroupUrl": "https://images.unsplash.com/photo-1484417894907-623942c8ee29?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+]
