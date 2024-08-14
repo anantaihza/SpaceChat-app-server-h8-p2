@@ -20,9 +20,10 @@ List of available endpoints:
 - <code>GET /myGroups</code> 4
 - <code>POST /myGroups/:groupId</code> 5
 - <code>GET /myGroups/:groupId/detail</code>6
-- <code>POST /chats/openai</code> 7
-- <code>GET /profile</code> 8
-- <code>PUT /profile/:id</code> 9
+- <code>DELETE /myGroups/:groupId</code> 7
+- <code>POST /chats/openai</code> 8
+- <code>GET /profile</code> 9
+- <code>PUT /profile/:id</code> 10
 
 ## 1. POST /register
 
@@ -335,131 +336,109 @@ _Response (404 - Not Found)_
 
 &nbsp;
 
-## 7. GET /myGroups
-
-Request:
-
-- headers:
-
-```json
-{
-  "Authorization": "Bearer <your access token>"
-}
-```
-
-Response:
-
-_Response (200 - OK)_
-
-```json
-[
-  {
-    "UserId": integer,
-    "GroupId": integer,
-    "Group": {
-      "id": integer,
-      "name": "string",
-      "description": "string",
-      "imgGroupUrl": "string"
-    },
-    "User": {
-      "id": integer,
-      "username": "string",
-      "email": "string",
-      "password": "string",
-      "imgUrl": null,
-      "name": "string"
-    }
-  },
-  {
-    "UserId": integer,
-    "GroupId": integer,
-    "Group": {
-      "id": integer,
-      "name": "string",
-      "description": "string",
-      "imgGroupUrl": "string"
-    },
-    "User": {
-      "id": integer,
-      "username": "string",
-      "email": "string",
-      "password": "string",
-      "imgUrl": null,
-      "name": "string"
-    }
-  },
-  ...
-]
-```
-
-&nbsp;
-
-## 4. GET /myGroups
-
-Request:
-
-- headers:
-
-```json
-{
-  "Authorization": "Bearer <your access token>"
-}
-```
-
-Response:
-
-_Response (200 - OK)_
-
-```json
-[
-  {
-    "UserId": integer,
-    "GroupId": integer,
-    "Group": {
-      "id": integer,
-      "name": "string",
-      "description": "string",
-      "imgGroupUrl": "string"
-    },
-    "User": {
-      "id": integer,
-      "username": "string",
-      "email": "string",
-      "password": "string",
-      "imgUrl": null,
-      "name": "string"
-    }
-  },
-  {
-    "UserId": integer,
-    "GroupId": integer,
-    "Group": {
-      "id": integer,
-      "name": "string",
-      "description": "string",
-      "imgGroupUrl": "string"
-    },
-    "User": {
-      "id": integer,
-      "username": "string",
-      "email": "string",
-      "password": "string",
-      "imgUrl": null,
-      "name": "string"
-    }
-  },
-  ...
-]
-```
-
-&nbsp;
-
-## 12. PUT /categories/:id
+## 7. DELETE /myGroups/:groupId
 
 Description:
 
-- Add category
+- Delete group by id
+
+Request:
+
+- headers:
+
+```json
+{
+  "Authorization": "Bearer <your access token>"
+}
+```
+
+- params:
+
+```json
+{
+  "groupId": integer
+}
+```
+
+_Response (200 - OK)_
+
+```json
+{
+  "message": "Group successfully deleted"
+}
+```
+
+_Response (404 - Not Found)_
+
+```json
+{
+  "message": "Data not found"
+}
+```
+
+&nbsp;
+
+## 8. POST /chats/openai
+
+Request:
+
+- headers:
+
+```json
+{
+  "Authorization": "Bearer <your access token>"
+}
+```
+
+- body:
+
+```json
+{
+  "inputPrompt": "string"
+}
+```
+
+Response:
+
+_Response (200 - OK)_
+
+```json
+{
+  "result": "string"
+}
+```
+
+&nbsp;
+
+## 9. GET /profile
+
+Request:
+
+- headers:
+
+```json
+{
+  "Authorization": "Bearer <your access token>"
+}
+```
+
+Response:
+
+_Response (200 - OK)_
+
+```json
+{
+  "id": integer,
+  "username": "string",
+  "name": "string",
+  "email": "string",
+  "img": "string"
+}
+```
+
+&nbsp;
+
+## 10. PUT /profile/:id
 
 Request:
 
@@ -483,7 +462,9 @@ Request:
 
 ```json
 {
-  "name": "string"
+  "name": "string",
+  "username": "string",
+  "avatar": file
 }
 ```
 
@@ -491,126 +472,11 @@ _Response (200 - OK)_
 
 ```json
 {
-  "id": 8,
-  "name": "happy meal",
-  "createdAt": "2024-07-22T22:57:38.715Z",
-  "updatedAt": "2024-07-22T23:01:50.338Z"
-}
-```
-
-_Response (400 - Bad Request)_
-
-```json
-{
-  "message": "Please enter your category"
-}
-```
-
-_Response (404 - Not Found)_
-
-```json
-{
-  "message": "Data not found"
-}
-```
-
-&nbsp;
-
-## 13. DELETE /categories/:id
-
-Description:
-
-- Delete category by id
-
-Request:
-
-- headers:
-
-```json
-{
-  "Authorization": "Bearer <your access token>"
-}
-```
-
-- params:
-
-```json
-{
-  "id": integer
-}
-```
-
-_Response (200 - OK)_
-
-```json
-{
-  "message": "happy meal success to delete"
-}
-```
-
-_Response (404 - Not Found)_
-
-```json
-{
-  "message": "Data not found"
-}
-```
-
-&nbsp;
-
-## 13. PATCH /cuisines/:id/imgUrl
-
-Description:
-
-- Update imgUrl
-
-Request:
-
-- headers:
-
-```json
-{
-  "Authorization": "Bearer <your access token>"
-}
-```
-
-- params:
-
-```json
-{
-  "id": integer
-}
-```
-
-- data:
-
-```json
-{
-  "avatar": "file"
-}
-```
-
-_Response (200 - OK)_
-
-```json
-{
-  "message": "Image Cuisine success to update"
-}
-```
-
-_Response (400 - Bad Request)_
-
-```json
-{
-  "message": "Please enter your url image"
-}
-```
-
-_Response (404 - Not Found)_
-
-```json
-{
-  "message": "Data not found"
+    "id": integer,
+    "username": "string",
+    "email": "string",
+    "imgUrl": "string",
+    "name": "string"
 }
 ```
 
