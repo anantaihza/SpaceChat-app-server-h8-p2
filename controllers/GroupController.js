@@ -110,6 +110,22 @@ class GroupController {
       next(error);
     }
   }
+
+  static async handleDeleteMyGroup(req, res, next) {
+    try {
+      const { groupId } = req.params;
+      const deleted = await UserGroup.destroy({
+        where: { id: groupId },
+      });
+      if (deleted) {
+        res.status(200).json({ message: "Group successfully deleted" });
+      } else {
+        res.status(404).json({ name: "NotFound" });
+      }
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 module.exports = GroupController;
