@@ -1,4 +1,3 @@
-const { where } = require("sequelize");
 const { UserGroup, User, Group } = require(`../models/index.js`);
 
 class GroupController {
@@ -21,7 +20,7 @@ class GroupController {
       const { groupId } = req.params;
       const UserId = req.user.id;
 
-      const joinedGroup = UserGroup.create({
+      const joinedGroup = await UserGroup.create({
         UserId,
         GroupId: groupId,
       });
@@ -40,7 +39,7 @@ class GroupController {
     try {
       const UserId = req.user.id;
 
-      const myGroups = UserGroup.findAll({
+      const myGroups = await UserGroup.findAll({
         include: [
           {
             model: User,

@@ -70,20 +70,25 @@ class UserController {
 
   static async updateProfile(req, res, next) {
     try {
-      const { id } = req.params;
-      const { username } = req.body;
-      const { avatar } = req.file.originalname;
+      const { id } = req.user;
+      const { username, name } = req.body;
+      const avatar = req.file;
+      // console.log(avatar, "<<<<");
       const foundUser = await User.findByPk(id);
       if (!foundUser) {
         throw { name: "NotFound" };
       } else {
         if (!avatar) {
           let update = await User.update(
-            { username: username },
+            { username: username, name: name },
             { where: { id: id } }
           );
           if (update) {
-            let dataUpdated = await User.findByPk(id);
+            let dataUpdated = await User.findByPk(id, {
+              attributes: {
+                exclude: ["password", "createdAt", "updatedAt"],
+              },
+            });
             res.status(200).json(dataUpdated);
           }
         } else {
@@ -98,13 +103,18 @@ class UserController {
             folder: "profile",
             public_id: req.file.originalname,
           });
-          await User.update(
-            { imgUrl: uploadFile.secure_url, username: username },
-            { where: { id: req.params.id } }
+          let data = await User.update(
+            { imgUrl: uploadFile.secure_url, username: username, name: name },
+            { where: { id: id } }
           );
-          res.status(200).json({
-            message: "Profile success to update",
-          });
+          if (data) {
+            let dataUpdated = await User.findByPk(id, {
+              attributes: {
+                exclude: ["password", "createdAt", "updatedAt"],
+              },
+            });
+            res.status(200).json(dataUpdated);
+          }
         }
       }
     } catch (error) {
