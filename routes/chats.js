@@ -1,6 +1,6 @@
 const ChatController = require("../controllers/ChatController");
 const router = require(`express`).Router();
 
-router.get(`/openai`, ChatController.chatWithOpenAI);
+router.post(`/openai`, ChatController.chatWithOpenAI);
 
 module.exports = router;

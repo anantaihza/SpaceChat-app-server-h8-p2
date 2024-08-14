@@ -15,6 +15,14 @@ function errorHandler(err, req, res, next) {
       status = 401;
       message = "Invalid email / password";
       break;
+    case "NotFound":
+      status = 404;
+      message = "Data is not found";
+      break;
+    case "AlreadyJoin":
+      status = 403;
+      message = "You're Already Join";
+      break;
     case "SequelizeValidationError":
     case "SequelizeUniqueConstraintError":
       status = 400;
@@ -23,7 +31,7 @@ function errorHandler(err, req, res, next) {
     case "BadRequest":
     case "Unauthorized":
       status = 400;
-      message = "Email and Password is invalid";
+      message = "Email and Password is required";
   }
   res.status(status).json({ message: message });
 }

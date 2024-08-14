@@ -20,6 +20,22 @@ class GroupController {
       const { groupId } = req.params;
       const UserId = req.user.id;
 
+      const group = await Group.findByPk(groupId);
+      if (!group) {
+        throw { name: "NotFound" };
+      }
+
+      const groupExist = await UserGroup.findOne({
+        where: {
+          UserId: UserId,
+          GroupId: groupId,
+        },
+      });
+
+      if (groupExist) {
+        throw { name: "AlreadyJoin" };
+      }
+
       const joinedGroup = await UserGroup.create({
         UserId,
         GroupId: groupId,
@@ -63,6 +79,33 @@ class GroupController {
       });
 
       res.status(200).json(myGroups);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  static async detailGroup(req, res, next) {
+    try {
+      const { groupId } = req.params;
+      const group = await Group.findByPk(groupId);
+      if (!group) {
+        throw { name: "NotFound" };
+      }
+      const detailGroup = await UserGroup.findOne({
+        where: {
+          GroupId: groupId,
+        },
+        include: {
+          model: Group,
+          attributes: {
+            exclude: [`createdAt`, `updatedAt`],
+          },
+        },
+        attributes: {
+          exclude: [`createdAt`, `updatedAt`],
+        },
+      });
+      res.status(200).json(detailGroup);
     } catch (error) {
       next(error);
     }
