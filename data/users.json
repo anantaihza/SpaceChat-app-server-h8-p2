@@ -2,21 +2,25 @@
     {
         "username": "Farhan123",
         "email": "farhan@mail.com",
-        "password": "farhan123"
+        "password": "farhan123",
+        "name": "Muhammad Farhan Rosidi"
     },
     {
         "username": "Aditya123",
         "email": "aditya@mail.com",
-        "password": "farhan123"
+        "password": "aditya123",
+        "name": "Aditya Saputra"
     },
     {
         "username": "Ananta123",
         "email": "ananta@mail.com",
-        "password": "ananta123"
+        "password": "ananta123",
+        "name": "Ananta Ihza Ramadhan"
     },
     {
         "username": "naufal123",
         "email": "naufal@mail.com",
-        "password": "naufal123"
+        "password": "naufal123",
+        "name": "Muhammad Naufaldillah"
     }
 ]

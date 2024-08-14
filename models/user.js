@@ -67,6 +67,19 @@ module.exports = (sequelize, DataTypes) => {
           msg: `Minimum password length is 4`
         }
       }
+    },
+    imgUrl: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: `Name is required`
+        },
+        notEmpty: {
+          msg: `Name is required`
+        }
+      }
     }
   }, {
     sequelize,
