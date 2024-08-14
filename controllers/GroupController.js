@@ -42,6 +42,12 @@ class GroupController {
       const myGroups = await UserGroup.findAll({
         include: [
           {
+            model: Group,
+            attributes: {
+              exclude: [`createdAt`, `updatedAt`],
+            },
+          },
+          {
             model: User,
             attributes: {
               exclude: [`createdAt`, `updatedAt`],
