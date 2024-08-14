@@ -19,7 +19,7 @@ List of available endpoints:
 - <code>GET /groups</code> 3
 - <code>GET /myGroups</code> 4
 - <code>POST /myGroups/:groupId</code> 5
-- <code>GET /myGroups/:groupId/detail</code>6
+- <code>GET /myGroups/:groupId/detail</code> 6
 - <code>DELETE /myGroups/:groupId</code> 7
 - <code>POST /chats/openai</code> 8
 - <code>GET /profile</code> 9

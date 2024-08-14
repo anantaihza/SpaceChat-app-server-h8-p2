@@ -120,7 +120,7 @@ class GroupController {
       if (deleted) {
         res.status(200).json({ message: "Group successfully deleted" });
       } else {
-        res.status(404).json({ name: "NotFound" });
+        res.status(404).json({ message: "Data not found" });
       }
     } catch (error) {
       next(error);
