@@ -62,6 +62,7 @@ class UserController {
         username: data.username,
         name: data.name,
         email: data.email,
+        img: data.imgUrl,
       });
     } catch (error) {
       next(error);

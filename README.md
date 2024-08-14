@@ -2,7 +2,7 @@
 
 Group Project Phase Hactiv8 Server
 
-# Codenity API Documentation
+# SpaceChat API Documentation
 
 #### Link Access
 
@@ -20,7 +20,7 @@ List of available endpoints:
 - <code>GET /myGroups</code> 4
 - <code>POST /myGroups/:groupId</code> 5
 - <code>GET /myGroups/:groupId/detail</code>6
-- <code>GET /chats/openai</code> 7
+- <code>POST /chats/openai</code> 7
 - <code>GET /profile</code> 8
 - <code>PUT /profile/:id</code> 9
 
