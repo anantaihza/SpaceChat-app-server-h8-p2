@@ -7,18 +7,13 @@ const cloudinary = require("cloudinary").v2;
 class UserController {
   static async register(req, res, next) {
     try {
-      const { username, email, password } = req.body;
-      if (!username || !email || !password) {
-        throw { name: "SequelizeValidationError" };
-      }
-      if (!email) {
-        throw { name: "SequelizeValidationError" };
-      }
-      if (!password) {
-        throw { name: "SequelizeValidationError" };
-      }
+      const { username, name, email, password } = req.body;
+      // if (!username || !name || !email || !password) {
+      //   throw { name: "SequelizeValidationError" };
+      // }
       const user = await User.create({
         username,
+        name,
         email,
         password,
       });
@@ -53,6 +48,21 @@ class UserController {
       }
       const access_token = signToken({ id: foundUser.id });
       res.status(200).json({ access_token });
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  static async getProfile(req, res, next) {
+    try {
+      let { id } = req.user;
+      let data = await User.findByPk(id);
+      res.status(200).json({
+        id: data.id,
+        username: data.username,
+        name: data.name,
+        email: data.email,
+      });
     } catch (error) {
       next(error);
     }
